@@ -57,24 +57,23 @@ def add_deductions_to_employees_information(employees):
 # Week 7: Joining Strings
 # External resource: isinstance() Function
 
-# A while loop to capture each element in the nested list
-# If statement and isinstance() function to test if 'each element is string datatype' is True
-# Else statement will convert False (non-string) elements into stings
-# Use .join() method to joining strings using the delimiter comma','
-# to convert employees nested list into a .csv format, which is easier to import or edit for future use
-outer_loop_iteration = 0
-while outer_loop_iteration < len(employees):
-    inner_loo_iteration = 0
-    while inner_loo_iteration < len(employees[outer_loop_iteration]):
-        field = employees[outer_loop_iteration][inner_loo_iteration]
-        if isinstance(field, str):
-            pass
-        else:
-            employees[outer_loop_iteration][inner_loo_iteration] = str(field)
-        inner_loo_iteration += 1
-    employee_record_separated_by_comma = ','.join(employees[outer_loop_iteration])
-    print(employee_record_separated_by_comma)
-    outer_loop_iteration += 1
+# A function that
+def print_employees_in_csv_format(employees):
+    outer_loop_iteration = 0
+    while outer_loop_iteration < len(employees):
+        inner_loo_iteration = 0
+        while inner_loo_iteration < len(employees[outer_loop_iteration]):
+            field = employees[outer_loop_iteration][inner_loo_iteration]
+            if isinstance(field, str):
+                pass
+            else:
+                employees[outer_loop_iteration][inner_loo_iteration] = str(field)
+            inner_loo_iteration += 1
+        employee_record_separated_by_comma = ','.join(employees[outer_loop_iteration])
+        print(employee_record_separated_by_comma)
+        outer_loop_iteration += 1
+
+print_employees_in_csv_format(employees)
 
 
 
